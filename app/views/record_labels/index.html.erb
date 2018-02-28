@@ -1,0 +1,20 @@
+<h1><%= link_to 'Artists', artists_path %>&nbsp;<%= link_to 'Albums', albums_path %>&nbsp;Labels</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Founder</th>
+    <th>Year Founded</th>
+    <th>Headquarters</th>
+  </tr>
+  <% @record_labels.each do |r| %>
+    <tr>
+      <td><%= r.id %></td>
+      <td><%= link_to r.name, record_label_path(r) %></td>
+      <td><%= r.founder %></td>
+      <td><%= r.year_founded %></td>
+      <td><%= r.headquarters %></td>
+    </tr>
+  <% end %>
+</table>

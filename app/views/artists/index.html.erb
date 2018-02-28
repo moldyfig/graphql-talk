@@ -1,0 +1,21 @@
+
+<h1>Artists&nbsp;<%= link_to 'Albums', albums_path %>&nbsp;<%= link_to 'Labels', record_labels_path %></h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Years Active</th>
+    <th>Genre</th>
+    <th>Style</th>
+  </tr>
+  <% @artists.each do |a| %>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= link_to a.name, artist_path(a) %></td>
+      <td><%= a.year_active_start %>&ndash;<%= a.year_active_end %></td>
+      <td><%= a.genre %></td>
+      <td><%= a.style %></td>
+    </tr>
+  <% end %>
+</table>

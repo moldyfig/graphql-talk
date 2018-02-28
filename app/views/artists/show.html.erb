@@ -1,0 +1,27 @@
+<h2><%= @artist.name %></h2>
+<p>
+  Genre: <%= @artist.genre %></td>
+</p>
+<p>
+  Style: <%= @artist.style %></td>
+</p>
+<p>
+  Active: <%= @artist.year_active_start %>&ndash;<%= @artist.year_active_end %></td>
+</p>
+<% if @artist.albums.present? %>
+  <h3>Discography</h3>
+  <table>
+  <% @artist.albums.each do |album| %>
+    <tr>
+    <td><%= album.title %></td>
+    <td><%= album.year %></td>
+    <td><%= album.record_label.name %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+<p>
+</p>
+<p>
+  <%= link_to 'Index', artists_path %>
+</p>

@@ -1,0 +1,16 @@
+<h2><%= @album.title %></h2>
+<p>
+  By <%= @album.artist.name %></td>
+</p>
+<p>
+  Released: <%= @album.year %></td>
+</p>
+<% if @album.review.present? %>
+  <h3>Review</h3>
+  <p>
+    <%= @album.review %>
+  </p>
+<% end %>
+<p>
+  <%= link_to 'Index', albums_path %>
+</p>
